@@ -1,0 +1,41 @@
+@UEAT.JiraMappingFromAnything.Web_HostAddress = http://localhost:5172
+
+###
+
+POST {{UEAT.JiraMappingFromAnything.Web_HostAddress}}/events
+Content-Type: application/json
+EventType: Car
+
+{
+  "Name": "Yolo",
+  "Entity": {
+    "Make": "Toyota",
+    "Model": "Camry",
+    "Year": 2023,
+    "Color": "Silver",
+    "Mileage": 10000,
+    "Brand": {
+        "Name": "Toyota",
+        "CountryOfOrigin": "Japan",
+        "LogoUrl": "https://example.com/toyota-logo.png"
+    }
+  }
+}
+
+###
+
+POST {{UEAT.JiraMappingFromAnything.Web_HostAddress}}/events
+Content-Type: application/json
+EventType: Order
+
+{
+  "Name": "Yeah",
+  "Entity": {
+    "OrderId": 123,
+    "Status": "Pending",
+    "Restaurant":{
+    "Name": "Pizza Palace",
+    "PosBrand": "Lightspeed"
+    }
+  }
+}
